@@ -36,5 +36,8 @@ export const createStudent = async (req, res) => {
         res.render('students/add-student');
     };
 
+    export const deleteStudent = (req, res){
+        res.send('eliminar alumno');
+    };
 
 };
