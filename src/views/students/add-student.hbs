@@ -1,0 +1,28 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <form action="/student/new-student" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Nombre del alumno" value="{{name}}" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last_name" placeholder="Apellido del alumno" value="{{last_name}}">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" name="ci" placeholder="CI" value="{{ci}}">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="birth" value="{{birth}}">
+                </div>
+                <div class="form-goup">
+                    <textarea class="form-control"
+                    name="address" placeholder="Direccion">{{address}}</textarea>
+                </div>
+                <div class="form-group d-grid">
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
