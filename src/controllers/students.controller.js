@@ -38,6 +38,14 @@ export const createStudent = async (req, res) => {
 
 
 };
-export const deleteStudent = (req, res) => {
-    res.send('eliminar alumno');
+
+export const listStudents = async(req, res) =>{
+    const students = await Student.find().sort({date : 'desc'}).lean();
+    res.render('students/all-students',{students});
+};
+
+export const deleteStudent = async(req, res) => {
+    await Student.findByIdAndDelete(req.params.id);
+    req.flash('success_msg','Alumno eliminado de la lista exitosamente');
+    res.redirect('/student/all-students');
 };

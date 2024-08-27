@@ -1,0 +1,38 @@
+<div class="accordion accordion-flush" id="accordionOne">
+    {{#each students}}
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{_id}}"
+                aria-expanded="false" aria-controls="{{_id}}">
+                {{name}} {{lastname}}
+            </button>
+        </h2>
+        <div id="{{_id}}" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+            <div class="accordion-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <label><b>Alumno: </b></label>
+                        {{name}} {{lastname}}
+                    </li>
+                    <li class="list-group-item">
+                        <label><b>CI: </b></label>
+                        {{ci}}
+                    </li>
+                    <li class="list-group-item">
+                        <label><b>Direccion: </b></label>
+                        {{address}}
+                    </li>
+                </ul>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">Editar</button>
+                    <form action="/student/delete/{{_id}}?_method=DELETE" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
